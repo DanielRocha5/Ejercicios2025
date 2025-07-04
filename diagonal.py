@@ -1,9 +1,14 @@
 def diagonalDifference(arr):
-    primaryDiagonal = 0
-    secondaryDiagonal = 0
-
-    for i in range(len(arr)):
-        primaryDiagonal += arr[i][i]
-        secondaryDiagonal += arr[i][len(arr) - 1 - i]
-   
-    return abs(primaryDiagonal - secondaryDiagonal)
+    filasColumnas=len(arr)
+    diagonal1=[]
+    diagonal2=[]
+    reversa=1
+    total=0
+    for i in range(0,filasColumnas):
+        diagonal1.append(arr[i][i])
+        diagonal2.append(arr[i][-reversa])
+        reversa+=1
+    diagonal1=sum(diagonal1)
+    diagonal2=sum(diagonal2)
+    total= abs(diagonal1-diagonal2)
+    return(total)
